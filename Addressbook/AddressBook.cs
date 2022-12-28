@@ -11,6 +11,12 @@ namespace Addressbook
         public string FirstName, LastName, Address, City, State,Email;
         public int Zip;
         public long PhoneNumber;
+        public AddressBook[] ContactArray;
+        public int Contact = 0;
+        public AddressBook()
+        {
+            this.ContactArray= new AddressBook[10];
+        }
         public AddressBook(string firstName, string lastName, string address, string city, string state,string email, int zip, long phoneNumber)
         {
             FirstName = firstName;
@@ -22,15 +28,13 @@ namespace Addressbook
             Zip = zip;
             PhoneNumber = phoneNumber;
         }
-        public void DisplayContatcs()
+        public void CreateContact(string firstName, string lastName, string address, string city, string state, string email, int zip, long phoneNumber)
         {
-            Console.WriteLine("Name : {0} {1}", FirstName, LastName);
-            Console.WriteLine("Address : {0}", Address);
-            Console.WriteLine("City : {0}", City);
-            Console.WriteLine("State : {0}", State);
-            Console.WriteLine("Email : {0}", Email);
-            Console.WriteLine("Zip : {0}", Zip);
-            Console.WriteLine("PhoneNumber : {0}", PhoneNumber);
+            ContactArray[this.Contact]=new AddressBook(firstName,lastName,address,city,state,email,zip,phoneNumber);
+            Contact++;
+            Program program=new Program();
+            program.DisplayContatcs(ContactArray, Contact);
         }
+        
     }
 }
