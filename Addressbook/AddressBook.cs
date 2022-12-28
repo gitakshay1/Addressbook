@@ -89,7 +89,6 @@ namespace Addressbook
                     int mNumber = Convert.ToInt32(Console.ReadLine());
                     ContactArray[i].PhoneNumber = mNumber;
                     break;
-
             }
             Program pr=new Program();
             pr.DisplayContatcs(ContactArray, Contact);
