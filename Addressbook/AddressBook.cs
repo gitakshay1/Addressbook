@@ -35,6 +35,66 @@ namespace Addressbook
             Program program=new Program();
             program.DisplayContatcs(ContactArray, Contact);
         }
+        public void EditContact()
+        {
+            int i = 0;
+            Console.WriteLine("Enter First Name to Edit");
+            string FirstName=Console.ReadLine();
+            while (ContactArray[i].FirstName!=FirstName)
+            {
+                i++;
+
+            }
+            Console.WriteLine("Enter Field tobe Modify\n1.First Name\n2.Last Name\n3.Address\n4.city\n5.State\n6.Email\n7.Zip\n8.Phone Number");
+            int Option =Convert.ToInt32(Console.ReadLine());
+            switch(Option)
+            {
+                case 1:
+                    Console.WriteLine("Enter Modified Value");
+                    string FName= Console.ReadLine();
+                    ContactArray[i].FirstName = FName;
+                    break;
+                case 2:
+                    Console.WriteLine("Enter Modified Value");
+                    string LName = Console.ReadLine();
+                    ContactArray[i].LastName = LName;
+                    break;
+                case 3:
+                    Console.WriteLine("Enter Modified Value");
+                    string Addres = Console.ReadLine();
+                    ContactArray[i].Address = Addres;
+                    break;
+                case 4:
+                    Console.WriteLine("Enter Modified Value");
+                    string citi = Console.ReadLine();
+                    ContactArray[i].City = citi;
+                    break;
+                case 5:
+                    Console.WriteLine("Enter Modified Value");
+                    string stat = Console.ReadLine();
+                    ContactArray[i].State = stat;
+                    break;
+                case 6:
+                    Console.WriteLine("Enter Modified Value");
+                    string emai = Console.ReadLine();
+                    ContactArray[i].Email = emai;
+                    break;
+                case 7:
+                    Console.WriteLine("Enter Modified Value");
+                    int zi = Convert.ToInt32(Console.ReadLine());
+                    ContactArray[i].Zip = zi;
+                    break;
+                case 8:
+                    Console.WriteLine("Enter Modified Value");
+                    int mNumber = Convert.ToInt32(Console.ReadLine());
+                    ContactArray[i].PhoneNumber = mNumber;
+                    break;
+
+            }
+            Program pr=new Program();
+            pr.DisplayContatcs(ContactArray, Contact);
+
+        }
         
     }
 }
