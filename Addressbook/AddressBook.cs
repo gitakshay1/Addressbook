@@ -95,6 +95,35 @@ namespace Addressbook
             pr.DisplayContatcs(ContactArray, Contact);
 
         }
+        public void DeleteContact()
+        {
+            Console.WriteLine("Enter First Name to Delete Contact");
+            string FirstName = Console.ReadLine();
+            int index = -1;
+            for(int i = 0; i < Contact; i++)
+            {
+                if (ContactArray[i].FirstName == FirstName)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            if(index != -1)
+            {
+                for(int i = index; i < Contact - 1;i++)
+                {
+                    ContactArray[i] = ContactArray[i + 1];
+                }
+                Contact--;
+                Console.WriteLine("Contact is Deleted");
+            }
+            else
+            {
+                Console.WriteLine("Contact is not present");
+            }
+            Program pro= new Program();
+            pro.DisplayContatcs(ContactArray,Contact);
+        }
         
     }
 }

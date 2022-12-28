@@ -43,6 +43,12 @@ namespace Addressbook
             {
                 add.EditContact();
             }
+            Console.WriteLine("Do you want to Delete Contact(Y/N)");
+            Char Cho = Convert.ToChar(Console.ReadLine());
+            if (Cho == 'Y' || Cho == 'y')
+            {
+                add.DeleteContact();
+            }
         }
         public void DisplayContatcs(AddressBook[] ContactArray,int n)
         {
